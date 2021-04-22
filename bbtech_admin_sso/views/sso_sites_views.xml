@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <menuitem name="SSO Sites" id="sso_sites_menu_root" />
+
+    <!-- SSO Sites Type -->
+    <record id="sso_sites_tree" model="ir.ui.view">
+      <field name="name">sso.sites.tree</field>
+      <field name="model">sso.sites</field>
+      <field name="arch" type="xml">
+        <tree string="SSO Sites" editable='bottom'>
+          <field name='name' />
+          <field name='site_url' />
+          <field name='db_name' />
+          <button name="go_to_website" string="Go to website" type="object" class="oe_highlight" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sso_sites_action">
+      <field name="name">SSO Sites</field>
+      <field name="res_model">sso.sites</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="sso_sites_id" name="SSO Sites" sequence="0" action="sso_sites_action" parent="sso_sites_menu_root" />
+
+
+  </data>
+</odoo>
